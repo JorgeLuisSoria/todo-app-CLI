@@ -1,4 +1,4 @@
-const { inquirerMenu, pausa } = require('./helpers/inquirer');
+const { inquirerMenu, pausa, leerInput } = require('./helpers/inquirer');
 const Tareas = require('./models/tareas');
 
 require('colors');
@@ -19,7 +19,8 @@ const main = async() => {
         switch ( opt ) {
             case '1':
                 // crear opción
-                
+                const desc = await leerInput('Descripción: ');
+                console.log( desc );
             break;
         
             case '2':
