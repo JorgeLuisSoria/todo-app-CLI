@@ -15,16 +15,12 @@ const main = async() => {
     const tareasDB = leerDB();
 
     if(tareasDB) {
-        // Establecer tareas
+        tareas.cargarTareasFromArray( tareasDB )
     }
-
-    await pausa();
-
-    
+  
     do {
         // Imprimir menu
         opt = await inquirerMenu();
-        console.log({ opt });
 
         switch ( opt ) {
             case '1':
@@ -38,7 +34,7 @@ const main = async() => {
             break;
         }
 
-        // guardarDB( tareas.listadoArr );
+        guardarDB( tareas.listadoArr );
 
 
         await pausa();
