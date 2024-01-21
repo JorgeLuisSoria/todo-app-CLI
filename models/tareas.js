@@ -40,6 +40,19 @@ class Tareas {
 
     }
 
+    listadoCompleto() {
+
+        this.listadoArr.forEach( (tarea, i) =>  {
+            
+            const idx = `${ i + 1 }`.yellow;
+            const { desc, completadoEn } = tarea;
+            const estado = ( completadoEn ) ? 'Completada'.green : 'Pendiente'.red;
+
+            console.log( `${ idx } ${ desc } :: ${ estado }` );
+        });
+
+    }
+
 }
 
 module.exports = Tareas;
